@@ -4,11 +4,7 @@
 {%- include functions.html func='log' level='debug' msg='Get header_transparent value' -%}
 {%- assign name = 'header_transparent' -%}
 {%- include functions.html func='get_value' default=true -%}
-{%- assign header_transparent = return -%}
 
-{%- if has_banner and header_transparent -%}
-  {%- assign header_transparent_class = "site-header-transparent" -%}
-{%- endif -%}
 
 <header class="site-header {{ header_transparent_class }}" role="banner">
 
@@ -47,9 +43,6 @@
               {%- assign name = 'lang' -%}
               {%- include functions.html func='get_value' default='en' -%}
               {%- assign lang = return -%}
-              <span class="page-link">
-                  {%- include extensions/google-translate.html -%}
-              </span>
             {%- endif -%}
           </div>
         </nav>
@@ -65,10 +58,6 @@
 
     function storeScrollData() {
       var y = getScrollPos().y;
-
-      {%- if banner and header_transparent -%}
-      documentElement.setAttribute("data-header-transparent", "");
-      {%- endif -%}
 
       var scrollStatus = "";
 
