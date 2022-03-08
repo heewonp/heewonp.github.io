@@ -1,0 +1,24 @@
+I"<h1 id="문제">문제</h1>
+
+<h2 id="자연수-n을-뒤집어-각-자리-숫자를-원소로-가지는-배열-형태로-리턴해주세요-예를들어-n이-12345이면-54321을-리턴합니다">자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.</h2>
+
+<h3 id="제한-조건">제한 조건</h3>
+<p>n은 10,000,000,000이하인 자연수입니다.</p>
+
+<p>입출력 예</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">n</th>
+      <th style="text-align: right">return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">12345</td>
+      <td style="text-align: right">[5,4,3,2,1]</td>
+    </tr>
+  </tbody>
+</table>
+:ET

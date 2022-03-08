@@ -1,0 +1,58 @@
+I"�	<h2 id="문제">문제</h2>
+<h3 id="자연수-n을-뒤집어-각-자리-숫자를-원소로-가지는-배열-형태로-리턴해주세요">자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요.</h3>
+<ul>
+  <li>예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+    <h4 id="제한-조건">제한 조건</h4>
+    <p>n은 10,000,000,000이하인 자연수입니다.</p>
+    <h4 id="입출력-예">입출력 예</h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">n</th>
+          <th style="text-align: right">return</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left">12345</td>
+          <td style="text-align: right">[5,4,3,2,1]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="풀이">풀이</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+
+</code></pre></div></div>
+<p>n을 string 으로 변환한 뒤, 역순으로 만들어 주고 map에 넣어서 다시 숫자로 변환한 뒤 list로 만들어 준다.</p>
+
+<h4 id="관련-개념">관련 개념</h4>
+
+<ul>
+  <li>map
+    <ul>
+      <li>형태: <strong>map(함수, 리스트)</strong></li>
+      <li>특징: 
+  <br />map 함수에서 사용되는 리스트를 변경하지 않고 새로운 리스트를 생성한다.
+  <br />리스트 뿐만 아니라 반복 가능한 객체를 모두 넣을 수 있다.
+  <br />map은 반환을 map객체로 반환 하기 때문에 앞에 list(),tuple()을 사용하여 list,tuple로 변환을 시켜준다.
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div>        </div>
+      </li>
+      <li>람다함수 적용:</li>
+    </ul>
+  </li>
+  <li>reversed 와 reverse
+    <ul>
+      <li>reversed : list를 뒤집어 주며 반환값이 있다.</li>
+      <li>reverse : list를 뒤집으며, 반환값이 없다.</li>
+    </ul>
+  </li>
+</ul>
+
+:ET
