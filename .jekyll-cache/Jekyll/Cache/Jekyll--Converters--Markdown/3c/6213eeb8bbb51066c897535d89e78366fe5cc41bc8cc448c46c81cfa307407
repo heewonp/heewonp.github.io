@@ -1,0 +1,51 @@
+I"L	<h2 id="문제">문제</h2>
+<p>단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.</p>
+
+<h2 id="제한사항">제한사항</h2>
+<p>s는 길이가 1 이상, 100이하인 스트링입니다.</p>
+
+<h2 id="입출력-예">입출력 예</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>s</td>
+      <td>return</td>
+    </tr>
+    <tr>
+      <td>"abcde"</td>
+      <td>"c"</td>
+    </tr>
+    <tr>
+      <td>"qwer"</td>
+      <td>"we"</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="문제풀이">문제풀이</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">%</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">answer</span>
+
+</code></pre></div></div>
+<p>단어의 길이를 구해서 홀수인지 짝수인지 판별</p>
+
+<h2 id="관련-개념">관련 개념</h2>
+
+<ul>
+  <li>
+    <p>% 연산자</p>
+  </li>
+  <li>
+    <p>// 연산자</p>
+  </li>
+</ul>
+:ET
