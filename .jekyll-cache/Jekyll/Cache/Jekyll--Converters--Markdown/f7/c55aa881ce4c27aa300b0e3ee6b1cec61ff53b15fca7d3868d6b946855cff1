@@ -1,0 +1,80 @@
+I"Q<h2 id="문제">문제</h2>
+
+<p>Roman numerals are represented by seven different symbols: <code class="language-plaintext highlighter-rouge">I</code>, <code class="language-plaintext highlighter-rouge">V</code>, <code class="language-plaintext highlighter-rouge">X</code>, <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">C</code>, <code class="language-plaintext highlighter-rouge">D</code> and <code class="language-plaintext highlighter-rouge">M</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+</code></pre></div></div>
+<p>For example, <code class="language-plaintext highlighter-rouge">2</code> is written as <code class="language-plaintext highlighter-rouge">II</code> in Roman numeral, just two one’s added together. <code class="language-plaintext highlighter-rouge">12</code> is written as <code class="language-plaintext highlighter-rouge">XII</code>, which is simply <code class="language-plaintext highlighter-rouge">X + II</code>. The number 27 is written as <code class="language-plaintext highlighter-rouge">XXVII</code>, which is <code class="language-plaintext highlighter-rouge">XX + V + II</code>.</p>
+
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code class="language-plaintext highlighter-rouge">IIII</code>. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code class="language-plaintext highlighter-rouge">IX</code>. There are six instances where subtraction is used:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">I</code> can be placed before <code class="language-plaintext highlighter-rouge">V</code> (5) and <code class="language-plaintext highlighter-rouge">X</code> (10) to make 4 and 9.</li>
+  <li><code class="language-plaintext highlighter-rouge">X</code> can be placed before <code class="language-plaintext highlighter-rouge">L</code> (50) and <code class="language-plaintext highlighter-rouge">C</code> (100) to make 40 and 90.</li>
+  <li><code class="language-plaintext highlighter-rouge">C</code> can be placed before <code class="language-plaintext highlighter-rouge">D</code> (500) and <code class="language-plaintext highlighter-rouge">M</code> (1000) to make 400 and 900.
+Given a roman numeral, convert it to an integer.</li>
+</ul>
+
+<p>Example 1:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "III"
+Output: 3
+Explanation: III = 3.
+</code></pre></div></div>
+<p>Example 2:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "LVIII"
+Output: 58
+Explanation: L = 50, V= 5, III = 3.
+</code></pre></div></div>
+
+<p>Example 3:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "MCMXCIV"
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+</code></pre></div></div>
+
+<p>Constraints:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1 &lt;= s.length &lt;= 15</code></li>
+  <li><code class="language-plaintext highlighter-rouge">s</code> contains only the characters <code class="language-plaintext highlighter-rouge">('I', 'V', 'X', 'L', 'C', 'D', 'M')</code>.</li>
+  <li>It is <em>guaranteed</em> that <code class="language-plaintext highlighter-rouge">s</code> is a valid roman numeral in the range <code class="language-plaintext highlighter-rouge">[1, 3999]</code>.</li>
+</ul>
+
+<h2 id="풀이">풀이</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">romanToInt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s">"M"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="s">"D"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s">"C"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span><span class="s">"L"</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span> <span class="s">"X"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s">"V"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"I"</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">dic</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="n">next_num</span> <span class="o">=</span> <span class="n">dic</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="o">&gt;=</span><span class="n">next_num</span><span class="p">):</span>
+                <span class="n">temp</span> <span class="o">+=</span> <span class="n">num</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">temp</span> <span class="o">-=</span> <span class="n">num</span>
+        
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">dic</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            
+        <span class="k">return</span> <span class="n">temp</span>
+
+</code></pre></div></div>
+
+<ol>
+  <li>문자와 숫자를 매핑해주는 딕셔너리를 만들어 준다.</li>
+  <li>해당하는 문자와 그 다음 문자를 딕셔너리에 담아준다.</li>
+  <li>해당 순서의 문자가 다음 문자보다 크거나 같으면 더하고 그렇지 않은 경우에는 빼준다.</li>
+</ol>
+:ET
