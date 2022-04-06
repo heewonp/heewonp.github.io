@@ -1,15 +1,0 @@
-I"<h2 id="문제">문제</h2>
-
-<p>Roman numerals are represented by seven different symbols: <code class="language-plaintext highlighter-rouge">I</code>, <code class="language-plaintext highlighter-rouge">V</code>, <code class="language-plaintext highlighter-rouge">X</code>, <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">C</code>, <code class="language-plaintext highlighter-rouge">D</code> and <code class="language-plaintext highlighter-rouge">M</code>.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-</code></pre></div></div>
-
-:ET

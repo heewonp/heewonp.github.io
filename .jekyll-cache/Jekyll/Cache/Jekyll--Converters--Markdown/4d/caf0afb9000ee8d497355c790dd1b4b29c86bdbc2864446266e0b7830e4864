@@ -1,0 +1,30 @@
+I"�<h2 id="문제">문제</h2>
+
+<p>Given two strings <code class="language-plaintext highlighter-rouge">s</code> and <code class="language-plaintext highlighter-rouge">t</code>, determine if they are isomorphic.</p>
+
+<p>Two strings <code class="language-plaintext highlighter-rouge">s</code> and <code class="language-plaintext highlighter-rouge">t</code> are isomorphic if the characters in <code class="language-plaintext highlighter-rouge">s</code> can be replaced to get <code class="language-plaintext highlighter-rouge">t</code>.</p>
+
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.</p>
+
+<h1 id="example-1">Example 1:</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "egg", t = "add"
+Output: true
+
+</code></pre></div></div>
+
+<p>Example 2:</p>
+
+<p>Input: s = “foo”, t = “bar”
+Output: false
+Example 3:</p>
+
+<p>Input: s = “paper”, t = “title”
+Output: true</p>
+
+<p>Constraints:</p>
+
+<p>1 &lt;= s.length &lt;= 5 * 104
+t.length == s.length
+s and t consist of any valid ascii character.</p>
+:ET

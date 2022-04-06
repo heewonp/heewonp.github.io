@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "leetcode 13.Roman to Integer"
+title: "leetcode 13.Roman to Integer(python)"
 categories: 코딩테스트
-tags: [python,코딩테스트,해시]
+tags: [python,코딩테스트,해시,leetcode]
 ---
 
 ## 문제
