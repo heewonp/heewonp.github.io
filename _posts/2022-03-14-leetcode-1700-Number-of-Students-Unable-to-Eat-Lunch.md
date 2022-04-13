@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "leetcode 67. Add Binary(python)"
+title: "leetcode 1700 Number of Students Unable to Eat Lunch(python)"
 categories: 코딩테스트
 tags: [python,코딩테스트,leetcode,큐]
 ---
