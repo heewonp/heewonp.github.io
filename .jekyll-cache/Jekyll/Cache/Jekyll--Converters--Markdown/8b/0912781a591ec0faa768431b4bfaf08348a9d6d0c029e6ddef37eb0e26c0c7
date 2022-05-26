@@ -1,0 +1,33 @@
+I"]<h3 id="정규-표현식">정규 표현식</h3>
+
+<h2 id="사용방법">사용방법</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">re</span>
+
+</code></pre></div></div>
+
+<h2 id="메타문자">메타문자</h2>
+
+<p>특별한 의미를 지닌 정규표현식 문자들</p>
+
+<ul>
+  <li>종류</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|, (), [], ., *, +, ?, ^, $, \,  (?p&lt;이름&gt;)
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">^</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">\</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">+</code> :</p>
+  </li>
+</ul>
+
+:ET
