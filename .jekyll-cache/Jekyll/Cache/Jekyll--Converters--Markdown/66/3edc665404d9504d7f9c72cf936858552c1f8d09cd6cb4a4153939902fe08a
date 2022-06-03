@@ -1,0 +1,95 @@
+I"O<h2 id="문제">문제</h2>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://programmers.co.kr/learn/courses/30/lessons/12909" target="_blank">https://programmers.co.kr/learn/courses/30/lessons/12909</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+<div class="jekyll-linkpreview-image">
+  <a href="https://programmers.co.kr/learn/courses/30/lessons/12909" target="_blank">
+    <img src="https://programmers.co.kr/assets/img-meta-programmers-e00862a7c9acd8ef5164f8c85b3ab0127d083ab59b3a98d7219690bd3570bf35.png" />
+  </a>
+</div>
+
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://programmers.co.kr/learn/courses/30/lessons/12909" target="_blank">프로그래머스</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">코드 중심의 개발자 채용. 스택 기반의 포지션 매칭. 프로그래머스의 개발자 맞춤형 프로필을 등록하고, 나와 기술 궁합이 잘 맞는 기업들을 매칭 받으세요.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//programmers.co.kr" target="_blank">programmers.co.kr</a>
+    </div>
+  </div>
+</div>
+
+<p>괄호가 바르게 짝지어졌다는 것은 ‘(‘ 문자로 열렸으면 반드시 짝지어서 ‘)’ 문자로 닫혀야 한다는 뜻입니다. 예를 들어</p>
+
+<ul>
+  <li>”()()” 또는 “(())()” 는 올바른 괄호입니다.</li>
+  <li>”)()(“ 또는 “(()(“ 는 올바르지 않은 괄호입니다.</li>
+  <li>’(‘ 또는 ‘)’ 로만 이루어진 문자열 s가 주어졌을 때, 문자열 s가 올바른 괄호이면 true를 return 하고, 올바르지 않은 괄호이면 false를 return 하는 solution 함수를 완성해 주세요.</li>
+</ul>
+
+<h2 id="제한사항">제한사항</h2>
+<ul>
+  <li>문자열 s의 길이 : 100,000 이하의 자연수</li>
+  <li>문자열 s는 ‘(‘ 또는 ‘)’ 로만 이루어져 있습니다.</li>
+</ul>
+
+<h2 id="입출력-예">입출력 예</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>s</td>
+      <td>answer</td>
+    </tr>
+    <tr>
+      <td>"()()"</td>
+      <td>"true"</td>
+    </tr>
+    <tr>
+      <td>"(())()"</td>
+      <td>"true"</td>
+    </tr>
+    <tr>
+      <td>"(())()"</td>
+      <td>"true"</td>
+    </tr>
+    <tr>
+      <td>"(())()"</td>
+      <td>"true"</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="문제풀이">문제풀이</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">%</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">answer</span>
+
+</code></pre></div></div>
+<ol>
+  <li>주어진 단어가 홀수인지 짝수인지 판단</li>
+  <li>홀수의 경우 //연산자를 이용하여 정수 몫을 리턴</li>
+  <li>짝수의경우 절반과 절반에서 한칸 앞의 단어를 리턴</li>
+</ol>
+
+<h2 id="관련-개념">관련 개념</h2>
+
+<ul>
+  <li>
+    <p>% 연산자 : 나머지</p>
+  </li>
+  <li>
+    <p>// 연산자 : 정수 몫</p>
+  </li>
+</ul>
+:ET

@@ -1,0 +1,69 @@
+I"<p>이것이 코딩 테스트다 with Python 의 도서를 보고 공부하며 정리한 게시글 입니다.</p>
+
+<h3 id="투-포인터">투 포인터</h3>
+<ul>
+  <li>리스트에 순차적으로 접근해야 할 때 2개의 점의 위치를 기록하면서 처리 하는 알고리즘</li>
+</ul>
+
+<h2 id="예시">예시</h2>
+<p>한 반에 학생이 40명 있을 때, 모든 학생을 번호 순서대로 일렬로 세운 뒤, 학생들을 순차적으로 지목해야 할 경우 <br />
+-&gt; 2,3,4,5,6,7번 학생을 지목해야 할 때, 번호로 한명씩 부르기 보단 ‘2번부터 7번까지의 학생’ 이라고 부르곤 함 <br />
+==&gt; 즉, 리스트에 담긴 데이터에 순차적으로 접근해야 할 때는 <strong>시작점</strong> 과 <strong>끝점</strong> 2개의 점으로 접근할 데이터의 범위를 표현할 수 있음</p>
+
+<h2 id="특정한-부분합을-가지는-부분-연속-수열-찾기-문제">특정한 부분합을 가지는 부분 연속 수열 찾기 문제</h2>
+<p>양의 정수로만 이루어진 리스트가 주어졌을 때, 그 부분 연속 수열 중에서  <strong>특정한 합</strong> 을 갖는 수열의 개수를 출력
+예) 1,2,3,2,5를 차례대로 원소를 갖는 리스트가 주어져 있다고 한다.
+이때 합계 값을 5라고 설정하면 다음과 같은 3가지 경우의 수만 존재.</p>
+<ul>
+  <li>[1,<strong>2</strong>,<strong>3</strong>,2,5]</li>
+  <li>[1,2,<strong>3</strong>,<strong>2</strong>,5]</li>
+  <li>[1,2,3,2,<strong>5</strong>]</li>
+</ul>
+
+<p>부분 연속 수열의 시작점(start)과 끝점(end)의 위치를 기록한다.<br />
+특정한 부분합을 m이라고 할 때, 구체적인 알고리즘은 다음과 같다.<br /></p>
+<ol>
+  <li>시작점과 끝점이 첫 번째 원소의 인덱스(0)를 가리키도록 한다.</li>
+  <li>현재 부분합이 m과 같다면 카운트한다.</li>
+  <li>현재 부분합이 m보다 작으면 end를 1 증가시킨다.</li>
+  <li>현재 부분합이 m보다 크거나 같으면 start를 1 증가시킨다.</li>
+  <li>모든 경우를 확인할 때까지 2번부터 4번까지의 과정을 반복한다.</li>
+</ol>
+
+<h1 id="소스">소스</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># 데이터의 개수
+</span><span class="n">m</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># 찾고자 하는 부분합
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># 전체 수열
+</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">interval_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># start를 차례대로 증가시키며 반복
+</span><span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># end를 가능한 만큼 이동시키기
+</span>    <span class="k">while</span> <span class="n">interval_sum</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="ow">and</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">interval_sum</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+        <span class="n">end</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># 부분합이 m일 때 카운트 증가
+</span>    <span class="k">if</span> <span class="n">interval_sum</span> <span class="o">==</span> <span class="n">m</span> <span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">interval_sum</span> <span class="o">-=</span> <span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>-&gt; 시작점을 loop를 돌며 증가시키며, 증가할 때마다 끝점을 맞게 증가시킴
+시작점을 오른쪽을 이동시키면 합이 감소, 끝점을 오른쪽으로 이동시키면 합이 증가
+하지만, 리스트 내 원소에 음수 데이터가 포함되어 있을 경우는 투 포인터 알고리즘 사용 할 수 없음</p>
+
+<h2 id="정렬되어-있는-두-리스트의-합집합">정렬되어 있는 두 리스트의 합집합</h2>
+<p>이미 정렬되어 있는 2개의 리스트가 입력으로 주어지고, 두 리스트의 모든 원소를 합쳐서 정렬한 결과를 계산 하는것</p>
+<ol>
+  <li>정렬된 리스틔 A,B를 입력받는다.</li>
+  <li>리스트 A에서 처리되지 않은 원소 중 가장 작은 원소를 i가 가리키도록 한다.</li>
+</ol>
+
+:ET

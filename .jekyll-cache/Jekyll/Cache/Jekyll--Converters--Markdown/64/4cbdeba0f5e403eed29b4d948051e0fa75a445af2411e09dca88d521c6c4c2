@@ -1,0 +1,27 @@
+I"�<h2 id="문제">문제</h2>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42576" target="_blank">https://programmers.co.kr/learn/courses/30/lessons/42576</a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+<div class="jekyll-linkpreview-image">
+  <a href="https://programmers.co.kr/learn/courses/30/lessons/42576" target="_blank">
+    <img src="https://programmers.co.kr/assets/img-meta-programmers-e00862a7c9acd8ef5164f8c85b3ab0127d083ab59b3a98d7219690bd3570bf35.png" />
+  </a>
+</div>
+
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="https://programmers.co.kr/learn/courses/30/lessons/42576" target="_blank">프로그래머스</a>
+        </h2>
+        <div class="jekyll-linkpreview-description">코드 중심의 개발자 채용. 스택 기반의 포지션 매칭. 프로그래머스의 개발자 맞춤형 프로필을 등록하고, 나와 기술 궁합이 잘 맞는 기업들을 매칭 받으세요.</div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//programmers.co.kr" target="_blank">programmers.co.kr</a>
+    </div>
+  </div>
+</div>
+
+<p>전화번호부에 적힌 전화번호 중, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인하려 합니다.
+전화번호가 다음과 같을 경우, 구조대 전화번호는 영석이의 전화번호의 접두사입니다.</p>
+:ET

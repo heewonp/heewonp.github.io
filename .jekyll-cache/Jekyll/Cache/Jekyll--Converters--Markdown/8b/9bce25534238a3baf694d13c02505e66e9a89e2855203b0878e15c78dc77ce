@@ -1,0 +1,230 @@
+I"D3<h1 id="리스트">리스트</h1>
+
+<p>여러가지 자료를 저장할 수 있는 자료형</p>
+
+<h2 id="리스트-표현-방법">리스트 표현 방법</h2>
+
+<p>리스트명 = [요소,요소,요소]</p>
+
+<p>리스트명 =  [] : 비어있는 리스트 생성가능</p>
+
+<h2 id="리스트-메소스">리스트 메소스</h2>
+
+<h3 id="리스트-요소-추가">리스트 요소 추가</h3>
+
+<ol>
+  <li>append
+    <ul>
+      <li>형태
+        <ul>
+          <li>리스트명.appned(요소)</li>
+          <li>리스트명[len(리스트명):] = [요소]</li>
+        </ul>
+      </li>
+      <li>리스트 끝에 항목을 추가 하는것</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span><span class="s">'바나나'</span><span class="p">]</span>
+ <span class="n">fruit</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'복숭아'</span><span class="p">)</span>
+ <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">,</span> <span class="s">'복숭아'</span><span class="p">]</span>
+
+ <span class="n">fruit</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">):]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'딸기'</span><span class="p">]</span>
+ <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">,</span> <span class="s">'복숭아'</span><span class="p">,</span> <span class="s">'딸기'</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>extend
+    <ul>
+      <li>형태
+        <ul>
+          <li>리스트명.extend(요소)</li>
+          <li>리스트명[len(리스트명):] = ‘요소’</li>
+          <li>리스트명 += [요소]</li>
+        </ul>
+      </li>
+      <li>반복 가능한 항목들을 추가 문자열의 경우 문자열 한개씩 추가</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span><span class="s">'바나나'</span><span class="p">]</span>
+ <span class="n">fruit</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="s">'복숭아'</span><span class="p">)</span>
+ <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">,</span> <span class="s">'복'</span><span class="p">,</span> <span class="s">'숭'</span><span class="p">,</span> <span class="s">'아'</span><span class="p">]</span>
+
+ <span class="n">fruit</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">):]</span> <span class="o">=</span> <span class="s">'딸기'</span>
+ <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">,</span> <span class="s">'복'</span><span class="p">,</span> <span class="s">'숭'</span><span class="p">,</span> <span class="s">'아'</span><span class="p">,</span> <span class="s">'딸'</span><span class="p">,</span> <span class="s">'기'</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>insert
+    <ul>
+      <li>형태 :
+        <ul>
+          <li>리스트명.insert(위치,요소)</li>
+        </ul>
+      </li>
+      <li>리스트 인덱스 위치에 항목을 삽입
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span><span class="s">'바나나'</span><span class="p">]</span>
+ <span class="n">fruit</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">'복숭아'</span><span class="p">)</span>
+ <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'복숭아'</span><span class="p">,</span> <span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">]</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="리스트-요소-삭제">리스트 요소 삭제</h3>
+
+<ol>
+  <li>pop
+    <ul>
+      <li>형태 :
+        <ul>
+          <li>리스트명.pop(삭제할인덱스번호)</li>
+        </ul>
+      </li>
+      <li>리스트에서 지정한 인덱스 항목에 있는 요소를 제거하고 나머지 리스트 반환,
+ 만약 인덱스 번호를 지정하지 않으면 리스트 맨 끝 항목을 제거 해줌</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span><span class="s">'바나나'</span><span class="p">,</span><span class="s">'복숭아'</span><span class="p">]</span>
+ <span class="n">fruit</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1번 인덱스 항목 삭제 (바나나)
+</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'복숭아'</span><span class="p">]</span>
+
+ <span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span><span class="s">'바나나'</span><span class="p">,</span><span class="s">'복숭아'</span><span class="p">]</span>
+ <span class="n">fruit</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 인덱스 지정하지 않았기 때문에 맨 끝 항목 삭제
+</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'바나나'</span><span class="p">]</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>remove</li>
+</ol>
+
+<ul>
+  <li>형태 :
+    <ul>
+      <li>리스트명.remove(삭제할 리스트의 요소)</li>
+    </ul>
+  </li>
+  <li>리스트의 요소를 제거한다. 만약 요소가 존재하지 않으면 오류가 발생
+```python</li>
+</ul>
+
+<p>fruit = [‘사과’,’바나나’,’복숭아’]
+fruit.remove(‘사과’)</p>
+<blockquote>
+  <p>[‘바나나’, ‘복숭아’]</p>
+</blockquote>
+
+<p>fruit = [‘사과’,’바나나’,’복숭아’]
+fruit.remove()</p>
+<blockquote>
+  <p>TypeError: list.remove() takes exactly one argument (0 given) 발생</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+3. del
+- 형태 : 
+    - del 리스트[인덱스]
+- 인덱스를 이용해 특정 리스트 요서를 삭제 할 수 있음. 슬라이싱을 사용하여 특정 범위 삭제도 가능
+```python
+
+fruit = ['사과','바나나','복숭아']
+del fruit[0]
+&gt; ['바나나', '복숭아']
+
+fruit = ['사과','바나나','복숭아','체리']
+del fruit[2:3]
+&gt; ['사과', '바나나', '체리']
+
+</code></pre></div></div>
+
+<h3 id="기타-메소드들">기타 메소드들</h3>
+
+<ol>
+  <li>index
+    <ul>
+      <li>형태:</li>
+    </ul>
+    <ul>
+      <li>리스트명.index(인덱스항목)
+    - 리스트요소의 인덱스를 반환</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="리스트-연산">리스트 연산</h2>
+
+<h3 id="리스트-끼리-합쳐주기한개의-리스트로-만들어-주는것">리스트 끼리 합쳐주기(한개의 리스트로 만들어 주는것)</h3>
+
+<ul>
+  <li>형태 : 리스트 + 리스트</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">l_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">l_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">l_sum</span> <span class="o">=</span> <span class="n">l_l</span> <span class="o">+</span> <span class="n">l_2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l_sum</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<h3 id="리스트-반복">리스트 반복</h3>
+
+<ul>
+  <li>형태 : 리스트 * (반복할 수)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="리스트-안의-요소끼리-연산각-리스트-배열의-순서대로-연산">리스트 안의 요소끼리 연산(각 리스트 배열의 순서대로 연산)</h2>
+
+<ol>
+  <li>for문 이용하기</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># 곱셈일경우
+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="c1"># 덧셈일경우
+</span>
+</code></pre></div></div>
+
+<h2 id="list-안에-string인-요소를-int로-변환-혹은-그-반대">list 안에 string인 요소를 int로 변환 혹은 그 반대</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">list_str</span> <span class="o">=</span> <span class="p">[</span><span class="s">'1'</span><span class="p">,</span><span class="s">'2'</span><span class="p">,</span><span class="s">'3'</span><span class="p">,</span><span class="s">'4'</span><span class="p">]</span>
+
+<span class="n">list_int</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<ol>
+  <li>str -&gt; int
+    <ul>
+      <li>map(int,list_str)</li>
+      <li>list(map(int,list_str))</li>
+      <li>[int(i) for i in list_str]</li>
+    </ul>
+  </li>
+  <li>int -&gt; str
+    <ul>
+      <li>map(str,list_str)</li>
+      <li>list(map(str,list_str))</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="리스트를-딕셔너리로-변환">리스트를 딕셔너리로 변환</h2>
+
+<h2 id="리스트-컴프리헨션">리스트 컴프리헨션</h2>
+:ET

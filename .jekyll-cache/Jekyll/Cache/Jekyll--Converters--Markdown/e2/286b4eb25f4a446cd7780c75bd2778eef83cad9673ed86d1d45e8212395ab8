@@ -1,0 +1,61 @@
+I"<h1 id="문제-출처">문제 출처</h1>
+<p>[https://www.acmicpc.net/problem/17219]</p>
+<div class="jekyll-linkpreview-wrapper">
+  <p><a href="" target="_blank"></a></p>
+  <div class="jekyll-linkpreview-wrapper-inner">
+    <div class="jekyll-linkpreview-content">
+<div class="jekyll-linkpreview-image">
+  <a href="" target="_blank">
+    <img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og.png" />
+  </a>
+</div>
+
+      <div class="jekyll-linkpreview-body">
+        <h2 class="jekyll-linkpreview-title">
+          <a href="" target="_blank"></a>
+        </h2>
+        <div class="jekyll-linkpreview-description"></div>
+      </div>
+    </div>
+    <div class="jekyll-linkpreview-footer">
+      <a href="//www.acmicpc.net" target="_blank">www.acmicpc.net</a>
+    </div>
+  </div>
+</div>
+
+<h1 id="아이디어">아이디어</h1>
+<ol>
+  <li>사이트, 비밀번호를 담을 hash를 만들어준다.</li>
+  <li>loop를 돌면서 사이트 : key, 비밀번호 : value를 담아준다.</li>
+  <li>loop를 통해 찾는 사이트의 비밀번호를 출력해준다.</li>
+</ol>
+
+<h2 id="문제유형">문제유형</h2>
+<p>해시</p>
+
+<h2 id="주의해야-할-것">주의해야 할 것</h2>
+<p>찾으려는 사이트들의 주소에 개행문자 제거를 해주어야 함</p>
+
+<h2 id="코드">코드</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+
+<span class="c1"># 저장된 사이트 주소수, 찾으려는 사이트 주소수
+</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="c1"># 비밀번호와 사이트를 담아줄 hash를 선언
+</span><span class="n">password_hash</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">site</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">password_hash</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">=</span> <span class="n">password</span> <span class="c1"># hash에 key:site, value:password 담아줌
+</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="c1"># 찾으려는 사이트 주소
+</span>    <span class="n">search_site</span> <span class="o">=</span> <span class="nb">input</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    <span class="c1"># 원하는 사이트의 비빌번호 출력
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">password_hash</span><span class="p">[</span><span class="n">search_site</span><span class="p">])</span>
+    
+</code></pre></div></div>
+:ET
